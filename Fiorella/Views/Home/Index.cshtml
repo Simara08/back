@@ -1,0 +1,300 @@
+﻿@using Fiorella.Models
+@model List<Slide>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- Main start -->
+<main>
+    <section id="slider">
+        <div class="intro">
+            <div class="intro-slideshow">
+                @foreach (var slide in Model)
+                {
+                    <div> <img src="@slide.Url" alt="slide-image" /> </div>
+                }
+            </div>
+            <div class="intro-header">
+                <h1>Send <span style="color: red;">flowers</span> like you mean it.</h1>
+                <p>Where flowers are our inspiration to create lasting memories. Whatever the occasion, our flowers will make it special cursus a sit amet mauris.</p>
+                <div>
+                    <img src="https://fiorello.qodeinteractive.com/wp-content/uploads/2018/04/h2-sign-img.png">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="filter">
+
+        <!-- Control buttons -->
+        <section id="products">
+            <div id="filter">
+                <!-- <button class="btn active" onclick="filterSelection('all')"> ALL</button>
+                <button class="btn " onclick="filterSelection('cactuses')"> CACTUSES</button>
+                <button class="btn" onclick="filterSelection('exotic')"> EXOTIC</button>
+                <button class="btn" onclick="filterSelection('greens')"> GREENS</button>
+                <button class="btn" onclick="filterSelection('popular')"> POPULAR</button>
+                <button class="btn" onclick="filterSelection('various')"> VARIOUS</button>
+                <button class="btn" onclick="filterSelection('winter')"> WINTER</button> -->
+                <ul id="categories">
+                    <li class="category active" data-filter="*" id="red-all" onclick="filterSelection('all')">ALL</li>
+                    <li class="category" data-filter=".cactuses" onclick="filterSelection('cactuses')">CACTUSES</li>
+                    <li class="category" data-filter=".exotic" onclick="filterSelection('exotic')">EXOTIC</li>
+                    <li class="category" data-filter=".greens" onclick="filterSelection('greens')">GREENS</li>
+                    <li class="category" data-filter=".popular" onclick="filterSelection('popular')">POPULAR</li>
+                    <li class="category" data-filter=".various" onclick="filterSelection('various')">VARIOUS</li>
+                    <li class="category" data-filter=".winter" onclick="filterSelection('winter')">WINTER</li>
+                </ul>
+                <span id="filter-span">
+                    FILTER <i class="fa-solid fa-caret-down"></i>
+                    <div id="filter-dropdown">
+                        <ul id="sort_by">
+                            <li>
+                                <a href="">
+                                    <h2 id="sort-h2-font">Sort By</h2>
+                                </a>
+                            </li>
+                            <li><a href="">Default</a></li>
+                            <li><a href="">Popularity</a></li>
+                            <li><a href="">Newness</a></li>
+                            <li><a href="">Price:Low To High</a></li>
+                            <li><a href="">Price:Hogh To Low</a></li>
+                        </ul>
+                        <ul id="price_range">
+                            <li>
+                                <a href="">
+                                    <h2 id="price-h2-font">Price Range</h2>
+                                </a>
+                            </li>
+                            <li><a href="">All</a></li>
+                            <li><a href="">$0-$10</a></li>
+                            <li><a href="">$10-$20</a></li>
+                            <li><a href="">$20-$30</a></li>
+                            <li><a href="">$30-$40</a></li>
+                            <li><a href="">40$+</a></li>
+
+                        </ul>
+                    </div>
+                </span>
+            </div>
+            <div id="product-cards">
+                <div class="card popular winter">
+                    <div class="card-image">
+                        <img src="https://fiorello.qodeinteractive.com/wp-content/uploads/2018/04/shop-14-img.jpg" alt="">
+                    </div>
+                    <div class="card-summary">
+                        <p class="item-name">MAJESTY PALM</p>
+                        <p class="add-to-card"><a href="">Add to cart</a></p>
+                        <p class="item-price">$259</p>
+                    </div>
+                </div>
+                <div class="card popular winter">
+                    <div class="card-image">
+                        <img src="https://fiorello.qodeinteractive.com/wp-content/uploads/2018/04/shop-13-img.jpg" alt="">
+                    </div>
+                    <div class="card-summary">
+                        <p class="item-name">FOXGLOVE FLOWER</p>
+                        <p class="add-to-card"><a href="">Add to cart</a></p>
+                        <p class="item-price">$259</p>
+                    </div>
+                </div>
+                <div class="card popular winter">
+                    <div class="card-image">
+                        <img src="https://fiorello.qodeinteractive.com/wp-content/uploads/2018/05/shop-10-img.jpg" alt="">
+                    </div>
+                    <div class="card-summary">
+                        <p class="item-name">SWEET ALYSSUM</p>
+                        <p class="read-more"><a href="">Read More</a></p>
+                        <p class="item-price">$259</p>
+                    </div>
+                </div>
+                <div class="card popular">
+                    <div class="card-image">
+                        <img src="https://fiorello.qodeinteractive.com/wp-content/uploads/2018/04/shop-11-img.jpg" alt="">
+                    </div>
+                    <div class="card-summary">
+                        <p class="item-name">SPRING SNOWFLAKE</p>
+                        <p class="add-to-card"><a href="">Add to cart</a></p>
+                        <p class="item-price">$170</p>
+                    </div>
+                </div>
+                <div class="card popular">
+                    <div class="card-image">
+                        <img src="https://fiorello.qodeinteractive.com/wp-content/uploads/2018/04/shop-12-img.jpg" alt="">
+                    </div>
+                    <div class="card-summary">
+                        <p class="item-name">SCARLET SAGE</p>
+                        <p class="add-to-card"><a href="">Add to cart</a></p>
+                        <p class="item-price">
+                            <span style="text-decoration:line-through ;margin-right:5px ;">$259</span>$159
+                        </p>
+                    </div>
+                </div>
+                <div class="card various">
+                    <div class="card-image">
+                        <img src="https://fiorello.qodeinteractive.com/wp-content/uploads/2018/04/shop-9-img.jpg" alt="">
+                    </div>
+                    <div class="card-summary">
+                        <p class="item-name">ROCK SOAPWORT</p>
+                        <p class="view-products"><a href="">View Products</a></p>
+                        <p class="item-price">$259</p>
+
+                    </div>
+                </div>
+                <div class="card greens various">
+                    <div class="card-image">
+                        <img src="https://fiorello.qodeinteractive.com/wp-content/uploads/2018/04/shop-8-img.jpg" alt="">
+                    </div>
+                    <div class="card-summary">
+                        <p class="item-name">SUMMER SAVORY</p>
+                        <p class="add-to-card"><a href="">Add to cart</a></p>
+                        <p class="item-price">$259</p>
+
+                    </div>
+                </div>
+                <div class="card exotic various">
+                    <div class="card-image">
+                        <img src="https://fiorello.qodeinteractive.com/wp-content/uploads/2018/04/shop-7-img.jpg" alt="">
+                    </div>
+                    <div class="card-summary">
+                        <p class="item-name">WILD ROSES</p>
+                        <p class="buy-on-amazon"><a href="">Buy on Amazon</a></p>
+                        <p class="item-price">$259</p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="valentine">
+            <div class="valentine_container">
+                <div class="valentine_video">
+                    <img src="https://fiorello.qodeinteractive.com/wp-content/uploads/2018/04/h3-video-img.jpg" alt="image">
+                    <div class="play">
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+                </div>
+                <div class="valentine_text">
+                    <h3>
+                        Suprise Your <span>Valentine!</span>
+                        Let us arrange a smile.
+                    </h3>
+                    <p>Where flowers are our inspiration to create lasting memories. Whatever the occasion...</p>
+                    <ul>
+                        <li>Hand picked just for you.</li>
+                        <li>Unique flower arrangements</li>
+                        <li>Best way to say you care.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="experts">
+            <div class="experts_text">
+                <h3>Flower Experts</h3>
+                <p>
+                    A perfect blend of creativity, energy, communication, happiness and love. Let us arrange a smile for you.
+                </p>
+            </div>
+            <div class="experts_cards">
+                <div class="experts_cards-item">
+                    <img src="https://fiorello.qodeinteractive.com/wp-content/uploads/2018/04/h3-team-img-1.png"
+                         alt="image">
+                    <h5>CRYSTAL BROOKS</h5>
+                    <p>Florist</p>
+                </div>
+                <div class="experts_cards-item">
+                    <img src="https://fiorello.qodeinteractive.com/wp-content/uploads/2018/05/h3-team-img-2.png"
+                         alt="image">
+                    <h5>SHIRLER HARRIS</h5>
+                    <p>Manager</p>
+                </div>
+                <div class="experts_cards-item">
+                    <img src="https://fiorello.qodeinteractive.com/wp-content/uploads/2018/04/h3-team-img-3.png"
+                         alt="image">
+                    <h5>BEVERLY CLARK</h5>
+                    <p>Florist</p>
+                </div>
+                <div class="experts_cards-item">
+                    <img src="https://fiorello.qodeinteractive.com/wp-content/uploads/2018/04/h3-team-img-4.png"
+                         alt="image">
+                    <h5>AMANDA WATKINS</h5>
+                    <p>Florist</p>
+                </div>
+            </div>
+        </section>
+        <section id="join">
+            <div class="join_summary">
+                <h3>
+                    Join The Colorful Bunch!
+                </h3>
+                <div class="join_input">
+                    <input type="text" placeholder="Email Address">
+                    <button>SUBSCRIBE</button>
+                </div>
+            </div>
+        </section>
+        <section id="blog">
+            <div class="blog_summary">
+                <h3>From our Blog</h3>
+                <p>
+                    A perfect blend of creativity, energy, communication, happiness and love. Let us arrange a smile for you.
+                </p>
+            </div>
+            <div class="blog_cards">
+                <div class="blog_card">
+                    <div class="blog_image">
+                        <img src="https://fiorello.qodeinteractive.com/wp-content/uploads/2018/04/blog-feature-img-1.jpg"
+                             alt="image">
+                    </div>
+                    <div class="blog_text">
+                        <a href="#" class="blog_link">Flower Power</a>
+                        <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per</p>
+                    </div>
+                    <a href="#" class="date_link">27.04.2018</a>
+                </div>
+                <div class="blog_card">
+                    <div class="blog_image">
+                        <img src="https://fiorello.qodeinteractive.com/wp-content/uploads/2018/05/blog-feature-img-3.jpg"
+                             alt="image">
+                    </div>
+                    <div class="blog_text">
+                        <a href="#" class="blog_link">Local Florists</a>
+                        <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per</p>
+                    </div>
+                    <a href="#" class="date_link">03.05.2018</a>
+                </div>
+                <div class="blog_card">
+                    <div class="blog_image">
+                        <img src="https://fiorello.qodeinteractive.com/wp-content/uploads/2018/05/blog-feature-img-4.jpg"
+                             alt="image">
+                    </div>
+                    <div class="blog_text">
+                        <a href="#" class="blog_link">Flower Beauty</a>
+                        <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per</p>
+                    </div>
+                    <a href="#" class="date_link">03.05.2018</a>
+                </div>
+            </div>
+        </section>
+        <section id="slick-carousel">
+            <div class="slick-carousel-items">
+                <div class="slick_carousel-item">
+                    <div class="slick_image">
+                        <img src="https://fiorello.qodeinteractive.com/wp-content/uploads/2018/04/testimonial-img-2.png"
+                             alt="image">
+                    </div>
+                    <h2>Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus lingua.</h2>
+                    <h6>ANNA BARNES</h6>
+                    <p>Florist</p>
+                </div>
+                <div class="slick_carousel-item">
+                    <div class="slick_image">
+                        <img src="https://fiorello.qodeinteractive.com/wp-content/uploads/2018/04/testimonial-img-1.png"
+                             alt="image">
+                    </div>
+                    <h2>Lorem ipsum dolor sit amet,consectruer adipicing elit. Aenean commodo ligua eget.</h2>
+                    <h6>JASMINE WHITE</h6>
+                    <p>Florist</p>
+                </div>
+            </div>
+        </section>
+</main>
+
